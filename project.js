@@ -78,3 +78,4 @@ const numberOfLines = getNumberOfLines();
 const bet = getBet(balance,numberOfLines);
 
 
+//Continue on this

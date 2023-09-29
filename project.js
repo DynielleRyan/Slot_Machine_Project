@@ -36,11 +36,11 @@ const getNumberOfLines = () => {
 
 const getBet = (balance) => {
     while (true) {
-        const bet = prompt ("enter the total  bet: ");
+        const bet = prompt ("enter the bet per line: ");
         const numberBet = parseFloat(bet); //parse is to convert a string to an actual number
 
-        if(isNaN(numberBet) || numberBet > balance || numberBet <= 0){
-            console.log("Please try again");
+        if(isNaN(numberBet) || numberBet <= 0 || numberBet > (balance / numberOfLines) ){
+            console.log(" Invalid bet,Please try again");
         }else{
             return numberBet;
         }
@@ -49,6 +49,6 @@ const getBet = (balance) => {
 
 let balance = deposit();
 const numberOfLines = getNumberOfLines();
-const bet = getBet(balance);
+const bet = getBet(balance,numberOfLines);
 
 
